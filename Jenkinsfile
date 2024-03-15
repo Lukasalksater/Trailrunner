@@ -1,6 +1,7 @@
 pipeline {
     agent any
 
+
     stages {
         stage('Build') {
             steps {
@@ -12,9 +13,14 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('Post Test') {
             steps {
-                echo 'Deploying....'
+                echo 'posting....'
+            }
+        }
+        stage('Run Robot and Post Test') {
+            steps {
+                echo 'roboting....'
             }
         }
     }
