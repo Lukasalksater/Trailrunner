@@ -14,11 +14,17 @@ pipeline {
             }
         }
         stage('Post Test') {
-           post {
-                always {
+            post {
+                always{
+                    jacoco (
+                        execPattern: 'target/*.exec',
+                        classPattern: 'target/classes',
+                        sourcePatern: 'src/main/java',
+                        exclusionPattern: 'src/test'
+                    )
                     junit '**/TEST*.xml'
                 }
-           }
+            }
         }
         stage('Run Robot and Post Test') {
             steps {
