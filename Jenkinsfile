@@ -14,6 +14,9 @@ pipeline {
             }
         }
         stage('Post Test') {
+            steps {
+                
+            }
             post {
                 always{
                     jacoco (
