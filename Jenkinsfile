@@ -17,7 +17,7 @@ pipeline {
         }
 
         stage('Post Test'){
-            steps (
+            steps {
                 scripts (
                  post {
                     always{
@@ -32,7 +32,7 @@ pipeline {
             }
 
                 )
-            )
+            }
            
         }
         stage('Run Robot and Post Test') {
