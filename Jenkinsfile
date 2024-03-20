@@ -13,6 +13,11 @@ pipeline {
                 dir('c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter7TrailrunnerProject/src/test/java/se/iths')
                 sh "mvn test"          
             }
+
+        }
+
+        stage('Post Test'){
+            
             post {
                 always{
                     jacoco (
