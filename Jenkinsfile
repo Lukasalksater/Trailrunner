@@ -26,7 +26,7 @@ pipeline {
                      jacoco (
                         execPattern: 'target/*.exec',
                         classPattern: 'target/classes',
-                        sourcePatern: 'src/main/java',
+                        sourcePattern: 'src/main/java',
                         exclusionPattern: 'src/test'
                     )
                     junit '**/TEST*.xml'
