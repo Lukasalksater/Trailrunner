@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                dir('c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter7TrailrunnerProject/src/test/java/se/iths')
+    
                 sh "mvn test"          
             }
 
