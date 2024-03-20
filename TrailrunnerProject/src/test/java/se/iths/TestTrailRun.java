@@ -91,7 +91,7 @@ public class TestTrailRun {
         assertEquals(120, trailrun.kilometerSpeed);
     }
 
-   /* @Disabled
+    
     @Test
 
     public void testIfDifferemtTrailrunHasDifferentId(){
@@ -100,7 +100,6 @@ public class TestTrailRun {
         Trailrun trailrun = new Trailrun(5, Duration.ofSeconds(36000));
         Trailrun trailrun2 = new Trailrun(5, Duration.ofSeconds(36000));
 
-       assertEquals(1000, trailrun.getIdNumber());
        assertEquals(trailrun.getIdNumber() + 1, trailrun2.getIdNumber());
 
 
@@ -110,10 +109,10 @@ public class TestTrailRun {
        assertEquals(trailrun2.getIdNumber() + 1, trailrun3.getIdNumber());
 
 
-       assertEquals("1000", trailrun.getID());
+       
         
 
-    }  */
+    } 
 
 
 
