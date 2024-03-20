@@ -20,9 +20,10 @@ pipeline {
 
         stage('Post Test'){
             steps {
-                script {
-                 post {
-                    always{
+                 echo "posting test"
+            }
+        post {
+             always{
                      jacoco (
                         execPattern: 'target/*.exec',
                         classPattern: 'target/classes',
@@ -31,9 +32,6 @@ pipeline {
                     )
                     junit '**/TEST*.xml'
                 }
-            }
-
-            }
             }
            
         }
