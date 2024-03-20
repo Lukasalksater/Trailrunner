@@ -5,12 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn compile'
+                bat "mvn compile"
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test"'            }
+                bat "mvn test"          
+            }
             post {
                 always{
                     jacoco (
