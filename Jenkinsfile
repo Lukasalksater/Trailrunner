@@ -17,10 +17,11 @@ pipeline {
         }
 
         stage('Post Test'){
-            
-            post {
-                always{
-                    jacoco (
+            steps (
+                scripts (
+                 post {
+                    always{
+                     jacoco (
                         execPattern: 'target/*.exec',
                         classPattern: 'target/classes',
                         sourcePatern: 'src/main/java',
@@ -29,6 +30,10 @@ pipeline {
                     junit '**/TEST*.xml'
                 }
             }
+
+                )
+            )
+           
         }
         stage('Run Robot and Post Test') {
             steps {
