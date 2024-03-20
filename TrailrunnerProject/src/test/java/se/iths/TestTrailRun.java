@@ -90,13 +90,4 @@ public class TestTrailRun {
 
         assertEquals(120, trailrun.kilometerSpeed);
     }
-
-    
-   
-
-
-
-
-    
-    
 }
