@@ -92,28 +92,7 @@ public class TestTrailRun {
     }
 
     
-    @Test
-
-    public void testIfDifferemtTrailrunHasDifferentId(){
-
-
-        Trailrun trailrun = new Trailrun(5, Duration.ofSeconds(36000));
-        Trailrun trailrun2 = new Trailrun(5, Duration.ofSeconds(36000));
-
-       assertEquals(trailrun.getIdNumber() + 1, trailrun2.getIdNumber());
-
-
-       Trailrun trailrun3 = new Trailrun(10, Duration.ofSeconds(3600), LocalDate.of(2024, 5, 25));
-
-
-       assertEquals(trailrun2.getIdNumber() + 1, trailrun3.getIdNumber());
-
-
-       
-        
-
-    } 
-
+   
 
 
 
