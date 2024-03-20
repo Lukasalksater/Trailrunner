@@ -5,18 +5,35 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+
+                sh "mvn clean"
+                sh "mvn compile"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                
+                sh "mvn test"          
             }
+
         }
-        stage('Post Test') {
+
+        stage('Post Test'){
             steps {
-                echo 'posting....'
+                 echo "posting test"
             }
+        post {
+             always{
+                     jacoco (
+                        execPattern: 'target/*.exec',
+                        classPattern: 'target/classes',
+                        sourcePattern: 'src/main/java',
+                        exclusionPattern: 'src/test'
+                    )
+                    junit '**/TEST*.xml'
+                }
+            }
+           
         }
         stage('Run Robot and Post Test') {
             steps {
