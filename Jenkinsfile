@@ -5,13 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir ('c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/TrailrunnerProject/src/test/java/se/iths')
+                
                 sh "mvn compile"
             }
         }
         stage('Test') {
             steps {
-    
+                dir ('c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/TrailrunnerProject/src/test/java/se/iths')
                 sh "mvn test"          
             }
 
