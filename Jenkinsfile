@@ -10,13 +10,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh "mvn test"
             }
         }
         stage('Post Test') {
-            steps {
-                echo 'posting....'
-            }
+           post {
+                always {
+                    junit '**/TEST*.xml'
+                }
+           }
         }
         stage('Run Robot and Post Test') {
             steps {
