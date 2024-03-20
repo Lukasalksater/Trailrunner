@@ -20,7 +20,7 @@ pipeline {
 
         stage('Post Test'){
             steps {
-                scripts (
+                scripts {
                  post {
                     always{
                      jacoco (
@@ -33,7 +33,7 @@ pipeline {
                 }
             }
 
-                )
+            }
             }
            
         }
