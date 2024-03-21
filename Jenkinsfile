@@ -46,7 +46,7 @@ pipeline {
                 always {
                      step([
                             $class: 'RobotPublisher',
-                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter',
+                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium',
                             outputFileName: "output.xml",
                             reportFileName: 'report.html',
                             logFileName: 'log.html'
