@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "python -m robot test.robot"
+                sh "python -m robot Selenium"
        
             }
 
