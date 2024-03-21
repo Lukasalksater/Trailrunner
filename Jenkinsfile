@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh robot  test.robot
+                robot  test.robot
        
             }
 
