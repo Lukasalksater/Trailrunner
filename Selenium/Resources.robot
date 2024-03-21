@@ -24,7 +24,7 @@ setup
     Open Browser    browser=Chrome
     Maximize Browser Window
     Go To    ${url}
-    Set Selenium Speed    1
+    Set Selenium Speed    0
 
 User already exist and is on homepage
     [Documentation]    checks if user is on homepage
