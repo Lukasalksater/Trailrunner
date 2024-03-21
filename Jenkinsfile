@@ -37,18 +37,19 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "robot"
+                sh robot  test.robot
+       
             }
 
             post {
 
                 always {
                      step([
-                            $class              : 'RobotPublisher',
-                            outputPath          : 'test_results',
-                            outputFileName      : "output.xml",
-                            reportFileName      : 'report.html',
-                            logFileName         : 'log.html'
+                            $class: 'RobotPublisher',
+                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter',
+                            outputFileName: "output.xml",
+                            reportFileName: 'report.html',
+                            logFileName: 'log.html'
                     ])
                 }
             }
