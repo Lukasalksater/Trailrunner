@@ -3,6 +3,7 @@ Documentation    test for Infotiv rental website
 Library    SeleniumLibrary
 Suite Setup    setup
 Resource    Resources.robot
+Test Teardown    Run Keyword  clearPage
 
 
 
