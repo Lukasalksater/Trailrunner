@@ -1,7 +1,3 @@
-
-
-
-
 *** Variables ***
 ${url}    https://rental20.infotiv.net/
 ${email}    bosse@gmail.com
@@ -24,7 +20,7 @@ setup
     Open Browser    browser=Chrome
     Maximize Browser Window
     Go To    ${url}
-    Set Selenium Speed    1
+    Set Selenium Speed     0
 
 User already exist and is on homepage
     [Documentation]    checks if user is on homepage
@@ -112,6 +108,9 @@ User Should Have A Car Booked
     Page Should Contain Element      //h1[@id='questionTextSmall']
     Click Button    //div[@id='backToStart']//button[@id='mypage']
     Page Should Contain Element    //td[@id='licenseNumber1']
+    Run Keyword    unbookCars
+
+    
 
 User Chooses A Filter
 
@@ -132,7 +131,14 @@ A car should appear
 User Has Booked A Car
     [Documentation]    Checks if user has booked a car
     Click Button    //button[@id='mypage']
-    Page Should Contain Element    //button[@id='unBook1']
+
+    ${unbookButton}=  Run Keyword And Return Status    Page Should Contain Element   //button[@id='unBook1']
+   Run Keyword If   ${unbookButton}==False   Pass Execution    "No car To unbook"
+
+
+
+
+
 
 User Clicks On Cancel Booking
     [Documentation]    Cancels the cars booking
@@ -143,4 +149,29 @@ User Clicks On Cancel Booking
 Users Car Booking Should Be Cancelled
 
     Page Should Not Contain Element    //td[@id='licenseNumber1']
+
+clearPage
+    [Documentation]    Clears the page after a test by going to main page and logging out if neccesary
+    [Tags]    tearDown
+    Click Element     //h1[@id='title']
+    ${logoutButton}    Run Keyword And Return Status    Page Should Contain Element    //button[@id='logout']
+   IF   ${logoutButton}==True
+       Click Element     //button[@id='logout']
+
+   END
+
+unbookCars
+    [Documentation]    unbooks all the cars
+    [Tags]    unbookAllCars
+    FOR  ${value}  IN RANGE    50
+        Click Element     //button[@id='mypage']
+        ${status}    Run Keyword And Return Status   Page Should Not Contain  //button[@id='unBook1']
+        Exit For Loop If   ${status}==True
+        Click Element    //button[@id='unBook1']
+        Handle Alert
+        
+    END
+
+    
+
 

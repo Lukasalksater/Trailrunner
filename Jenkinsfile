@@ -37,7 +37,21 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                echo 'roboting....'
+                sh "python -m robot Selenium"
+       
+            }
+
+            post {
+
+                always {
+                     step([
+                            $class: 'RobotPublisher',
+                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium',
+                            outputFileName: "output.xml",
+                            reportFileName: 'report.html',
+                            logFileName: 'log.html'
+                    ])
+                }
             }
         }
     }
