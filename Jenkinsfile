@@ -41,7 +41,8 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "python -m robot Selenium/test.robot"
+                sh "python -m robot Selenium" 
+                sh  "robot --outputDir ${directory}"
        
             }
 
@@ -51,12 +52,12 @@ pipeline {
                      step([
                             $class: 'RobotPublisher',
                             outputPath: '${directory}',
-                            outputFileName: 'output.xml',
+                            outputFileName: "output.xml",
                             reportFileName: 'report.html',
                             logFileName: 'log.html',
-                            passThreshold: '100',
-                            unstableThreshold: '75',
-                            onlyCritical: 'false'
+                            passThreshold: 100,
+                            unstableThreshold: 75,
+                            onlyCritical: false
                     ])
                 }
             }
