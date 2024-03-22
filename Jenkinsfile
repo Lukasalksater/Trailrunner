@@ -44,10 +44,10 @@ pipeline {
             post {
 
                 always {
-                     step([
+                     
                             robot outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium', 'passThreshold: 80', 'unstableThreshold: 70', 'onlyCritical: false'
 
-                    ])
+                    
                 }
             }
         }
