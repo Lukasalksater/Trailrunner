@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "robot --outputPath ${directory}"
+                sh "robot --outputDir ${directory}"
        
             }
 
