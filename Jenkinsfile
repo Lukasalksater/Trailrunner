@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-
-        def directory = "c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter"
-    }
 
     stages {
         stage('Build') {
@@ -51,7 +47,7 @@ pipeline {
                 always {
                      step([
                             $class: 'RobotPublisher',
-                            outputPath: '${directory}',
+                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter',
                             outputFileName: "output.xml",
                             reportFileName: 'report.html',
                             logFileName: 'log.html',
