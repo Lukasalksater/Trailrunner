@@ -3,7 +3,7 @@ pipeline {
 
     environment {
 
-        def directory = "c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium"
+        def directory = "c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter"
     }
 
     stages {
@@ -42,7 +42,7 @@ pipeline {
         stage('Run Robot and Post Test') {
             steps {
                 sh "python -m robot Selenium" 
-                sh  "robot --outputDir ${directory}"
+                
        
             }
 
