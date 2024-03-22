@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+
+        ${directory} 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium"'
+    }
 
     stages {
         stage('Build') {
@@ -37,7 +41,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "robot  --outputDir c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium"
+                sh "robot  --outputDir ${directory}"
        
             }
 
@@ -46,10 +50,13 @@ pipeline {
                 always {
                      step([
                             $class: 'RobotPublisher',
-                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium',
+                            outputPath: '${directory}',
                             outputFileName: "output.xml",
                             reportFileName: 'report.html',
                             logFileName: 'log.html'
+                            passThreshold: '100'
+                            unstableThreshold: '75'
+                            onlyCritical: 'false'
                     ])
                 }
             }
