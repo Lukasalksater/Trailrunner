@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "robot --nostatusrc  --outputDir ${directory}/test.robot"
+                sh "robot --outputPath ${directory}"
        
             }
 
