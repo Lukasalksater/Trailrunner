@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh "python -m robot  Selenium" '  outputDir c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium'
+                sh "robot  --outputDir c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium"
        
             }
 
