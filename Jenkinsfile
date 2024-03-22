@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                sh 'robot --outputDir ${directory}'
+                sh "python -m robot Selenium"
        
             }
 
