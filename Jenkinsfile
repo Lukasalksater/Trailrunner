@@ -46,10 +46,13 @@ pipeline {
                 always {
                      step([
                             $class: 'RobotPublisher',
-                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium',
+                            outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter',
                             outputFileName: "output.xml",
                             reportFileName: 'report.html',
-                            logFileName: 'log.html'
+                            logFileName: 'log.html',
+                            passThreshold: 100,
+                            unstableThreshold: 75,
+                            onlyCritical: false
                     ])
                 }
             }
