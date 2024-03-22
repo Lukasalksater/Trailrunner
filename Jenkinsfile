@@ -53,9 +53,9 @@ pipeline {
                             outputPath: '${directory}',
                             outputFileName: "output.xml",
                             reportFileName: 'report.html',
-                            logFileName: 'log.html'
-                            passThreshold: '100'
-                            unstableThreshold: '75'
+                            logFileName: 'log.html',
+                            passThreshold: '100',
+                            unstableThreshold: '75',
                             onlyCritical: 'false'
                     ])
                 }
