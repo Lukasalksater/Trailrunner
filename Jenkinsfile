@@ -45,7 +45,7 @@ pipeline {
 
                 always {
                      
-                          sh "python -m robot outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium', 'passThreshold: 80', 'unstableThreshold: 70', 'onlyCritical: false'"
+                          sh robot outputPath: 'c:/Users/LukasAlksäter-MT23GB/.jenkins/workspace/Lukas Alksäter/Selenium', 'passThreshold: 80', 'unstableThreshold: 70', 'onlyCritical: false'
 
                     
                 }
