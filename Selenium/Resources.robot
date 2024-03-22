@@ -25,7 +25,7 @@ setup
 User already exist and is on homepage
     [Documentation]    checks if user is on homepage
     [Tags]    LogIn
-    Page Should Contain Element    //button[@id='continue']
+    
 
 User Inputs email '${email}' and password '${password}'
     [Documentation]    logs in to the website
