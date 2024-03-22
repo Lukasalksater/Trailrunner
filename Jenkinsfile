@@ -51,7 +51,7 @@ pipeline {
                      step([
                             $class: 'RobotPublisher',
                             outputPath: '${directory}',
-                            outputFileName: "output.xml",
+                            outputFileName: 'output.xml',
                             reportFileName: 'report.html',
                             logFileName: 'log.html',
                             passThreshold: '100',
